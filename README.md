@@ -1,53 +1,70 @@
 # CBR 新能源汽车 LCC 估算系统
 
-<p align="center"><img src="docs/assets/retro-anime-banner.svg" alt="复古二次元风格装饰" width="760"></p>
+<p align="center"><img src="docs/assets/retro-anime-banner.svg" alt="新能源汽车生命周期成本估算主题装饰" width="760"></p>
 
-这是一个用案例推理估算新能源汽车生命周期成本的桌面工具。它把案例导入、参数清洗、相似案例检索、LCC 估算和验证记录放在同一个流程里，并支持把结果导出为 Excel 或 CSV。
+这是一个用案例推理估算新能源汽车生命周期成本的桌面工具。用户可以导入车辆案例，清洗参数，检索相似案例，查看购置、使用和回收成本，再把估算结果与验证记录导出。
 
-项目使用 SQLite 管理案例库，提供 `manhattan`、`cosine` 和 `experimental_hybrid` 三种相似度算法，并通过留一法统计 MAPE、RMSE 和误差分布。
-## 功能概览
+项目使用 SQLite 保存案例库，提供 manhattan、cosine 和 experimental_hybrid 三种相似度算法。模型验证采用留一法，统计 MAPE、RMSE 和误差分布，便于比较不同参数和算法的结果。
 
-- CSV 案例导入与参数清洗
-- `manhattan` / `cosine` / `experimental_hybrid` 三种算法估算
-- LCC 分项结果展示（购置、使用、回收）
-- 留一法模型验证与误差统计（MAPE、RMSE、误差分布）
-- SQLite 案例库管理（增删改查、导入导出）
-- 验证记录与估算记录留痕（可导出 Excel/CSV）
+## 估算流程
 
-## 环境要求
+~~~mermaid
+flowchart LR
+    A[CSV 案例] --> B[参数清洗]
+    B --> C[相似案例检索]
+    C --> D[LCC 分项估算]
+    D --> E[结果与验证记录]
+    E --> F[Excel / CSV]
+~~~
+
+## 功能
+
+- 导入 CSV 案例并检查字段、缺失值和数值格式。
+- 以 manhattan、cosine 或 experimental_hybrid 检索相似案例。
+- 展示购置、使用、维护和回收等 LCC 分项。
+- 使用留一法记录 MAPE、RMSE 和误差分布。
+- 通过 SQLite 管理案例、估算记录和验证记录。
+- 导出 Excel 或 CSV，方便继续分析。
+
+## 数据格式
+
+示例文件位于 data/data_sample.csv，标准列为：
+
+~~~text
+车型, 长, 宽, 高, 轴距, 最大功率, 最大扭矩, 续航里程, 电池类型, 快充时间, 价格, LCC（10年）
+~~~
+
+## 环境和安装
 
 - Python 3.11+
-- Windows（当前提供了 `launcher/launch.bat` 启动脚本）
+- Windows（仓库提供 launcher/launch.bat）
 
-## 快速开始
-
-```bash
+~~~powershell
 python -m venv .venv
-.venv\Scripts\activate
+.\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 python src/main.py
-```
+~~~
 
-也可以直接双击 `launcher/launch.bat` 启动。
+也可以直接双击 launcher/launch.bat。
 
-## 项目结构
+## 目录
 
-```text
+~~~text
 delivery/
-  src/                # 主程序与核心模块
-  data/               # 示例数据
-  docs/               # 项目说明文档
-  launcher/           # 启动脚本
-  packaging/          # PyInstaller 打包配置
-```
+├── src/          # 主程序、数据库和估算逻辑
+├── data/         # 示例案例数据
+├── docs/         # 使用说明和设计文档
+├── launcher/     # 启动脚本
+└── packaging/    # PyInstaller 打包配置
+~~~
 
-## 数据说明
+## 估算记录
 
-示例数据位于 `data/data_sample.csv`，标准列为：
+案例库、估算记录和验证记录都写入本地 SQLite。导入新数据前建议保留一份数据库备份；导出文件适合用于复核和后续分析。
 
-`车型, 长, 宽, 高, 轴距, 最大功率, 最大扭矩, 续航里程, 电池类型, 快充时间, 价格, LCC（10年）`
+## 当前边界
 
-## 说明
-
-- `src/fetcher.py` 目前为采集接口预留，尚未实现稳定网页抓取。
-- 本仓库为源码仓库，不包含虚拟环境、打包中间产物和发布 exe。
+- src/fetcher.py 只是采集接口预留，目前没有稳定的网页抓取实现。
+- 仓库只保存源码和示例数据，不包含虚拟环境、打包中间产物或发布 exe。
+- LCC 结果取决于案例质量、字段单位和输入假设，使用前应先检查数据口径。

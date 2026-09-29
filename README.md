@@ -1,7 +1,10 @@
 # CBR 新能源汽车 LCC 估算系统
 
-基于 CBR（Case-Based Reasoning）方法的新能源汽车生命周期成本（LCC）估算工具，提供图形化界面，支持案例库管理、模型验证和结果导出。
+<p align="center"><img src="docs/assets/retro-anime-banner.svg" alt="复古二次元风格装饰" width="760"></p>
 
+这是一个用案例推理估算新能源汽车生命周期成本的桌面工具。它把案例导入、参数清洗、相似案例检索、LCC 估算和验证记录放在同一个流程里，并支持把结果导出为 Excel 或 CSV。
+
+项目使用 SQLite 管理案例库，提供 `manhattan`、`cosine` 和 `experimental_hybrid` 三种相似度算法，并通过留一法统计 MAPE、RMSE 和误差分布。
 ## 功能概览
 
 - CSV 案例导入与参数清洗

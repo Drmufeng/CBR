@@ -1,23 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="180" viewBox="0 0 760 180" role="img" aria-labelledby="title desc">
-  <title id="title">新能源汽车生命周期成本复古动画装饰</title>
-  <desc id="desc">复古小汽车、电池和生命周期箭头组成的二次元横幅。</desc>
-  <rect x="8" y="8" width="744" height="164" rx="26" fill="#FFF4C7" stroke="#49382B" stroke-width="3"/>
-  <path d="M27 137 C130 113 218 154 311 132 S502 112 733 141" fill="none" stroke="#E26D5A" stroke-width="10" opacity=".55"/>
-  <path d="M28 142 C130 118 218 159 311 137 S502 117 733 146" fill="none" stroke="#77A88B" stroke-width="3" stroke-dasharray="5 9"/>
-  <g transform="translate(53 55)" stroke="#49382B" stroke-width="3" stroke-linejoin="round">
-    <path d="M0 50 L20 22 H80 L105 50 V74 H0z" fill="#E26D5A"/><path d="M29 23 L43 5 H68 L81 23" fill="#F3C38B"/>
-    <circle cx="23" cy="75" r="13" fill="#49382B"/><circle cx="82" cy="75" r="13" fill="#49382B"/><circle cx="23" cy="75" r="5" fill="#FFF4C7" stroke="none"/><circle cx="82" cy="75" r="5" fill="#FFF4C7" stroke="none"/>
-    <path d="M48 45 h18 v-9 l14 17 H62 v9z" fill="#77A88B"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="180" viewBox="0 0 760 180" role="img" aria-labelledby="cbr-title cbr-desc">
+  <title id="cbr-title">Case based lifecycle cost estimation workflow</title>
+  <desc id="cbr-desc">A four-step loop from vehicle cases and similarity search to lifecycle cost estimates and validation.</desc>
+  <defs><marker id="cbr-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8z" fill="#64748B"/></marker></defs>
+  <rect x="8" y="8" width="744" height="164" rx="12" fill="#FFFBEB" stroke="#FCD34D"/>
+  <g fill="none" stroke="#94A3B8" stroke-width="2" marker-end="url(#cbr-arrow)"><path d="M166 104H198"/><path d="M342 104H374"/><path d="M518 104H550"/></g>
+  <text x="28" y="34" fill="#422006" font-family="Arial,sans-serif" font-size="18" font-weight="700">CASE → LCC → VALIDATION</text>
+  <text x="28" y="54" fill="#92400E" font-family="Arial,sans-serif" font-size="11">EV LIFECYCLE COST ESTIMATION</text>
+  <g font-family="Arial,sans-serif" font-size="11" fill="#422006">
+    <rect x="28" y="72" width="138" height="64" rx="8" fill="#FFF7ED" stroke="#FDBA74"/>
+    <path d="M45 112l10-18h48l15 18v11H45z" fill="#FB923C" stroke="#9A3412" stroke-width="2"/><circle cx="62" cy="124" r="7" fill="#422006"/><circle cx="101" cy="124" r="7" fill="#422006"/><path d="M65 94l8-10h20l8 10" fill="#FED7AA" stroke="#9A3412" stroke-width="2"/><text x="45" y="134">vehicle cases</text>
+    <rect x="200" y="72" width="142" height="64" rx="8" fill="#ECFDF5" stroke="#86EFAC"/>
+    <circle cx="231" cy="101" r="15" fill="#A7F3D0" stroke="#047857" stroke-width="2"/><circle cx="277" cy="101" r="15" fill="#A7F3D0" stroke="#047857" stroke-width="2"/><path d="M246 101h16" stroke="#047857" stroke-width="3"/><text x="218" y="130">similarity search</text>
+    <rect x="374" y="72" width="144" height="64" rx="8" fill="#EFF6FF" stroke="#93C5FD"/>
+    <rect x="399" y="84" width="48" height="32" rx="4" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="2"/><path d="M409 100h28M423 90v20" stroke="#1D4ED8" stroke-width="3"/><path d="M461 93h37M461 103h29M461 113h33" stroke="#1D4ED8" stroke-width="3"/><text x="399" y="130">LCC estimate</text>
+    <rect x="550" y="72" width="182" height="64" rx="8" fill="#FDF2F8" stroke="#F9A8D4"/>
+    <path d="M574 112l12-18 12 13 14-22 28 27" fill="none" stroke="#BE185D" stroke-width="3"/><path d="M650 87h59M650 99h48M650 111h54" stroke="#BE185D" stroke-width="3"/><text x="574" y="130">MAPE · RMSE · export</text>
   </g>
-  <g transform="translate(303 42)" stroke="#49382B" stroke-width="3" stroke-linejoin="round">
-    <rect x="0" y="0" width="72" height="45" rx="7" fill="#77A88B"/><rect x="72" y="13" width="8" height="19" rx="2" fill="#49382B"/>
-    <path d="M14 22 H57 M35 8 V36" stroke="#FFF4C7" stroke-width="5"/><path d="M-31 23 Q-53 55 -26 77 M110 23 Q133 55 106 77" fill="none" stroke="#E26D5A" stroke-width="5"/>
-    <path d="M-32 18 l-11 8 12 8 M108 69 l12 8-12 8" fill="none"/>
-  </g>
-  <g transform="translate(617 43)" stroke="#49382B" stroke-width="3" stroke-linejoin="round">
-    <rect x="0" y="0" width="72" height="92" rx="9" fill="#F3C38B"/><rect x="13" y="12" width="46" height="21" fill="#FFF4C7"/>
-    <g fill="#E26D5A" stroke="none"><circle cx="20" cy="50" r="4"/><circle cx="36" cy="50" r="4"/><circle cx="52" cy="50" r="4"/><circle cx="20" cy="67" r="4"/><circle cx="36" cy="67" r="4"/><circle cx="52" cy="67" r="4"/></g>
-  </g>
-  <text x="211" y="117" fill="#49382B" font-size="23" font-family="cursive" font-weight="700">LCC DRIVE</text>
-  <text x="210" y="140" fill="#49382B" font-size="14" font-family="sans-serif">CASE RETRIEVAL · LCC · VALIDATION</text>
 </svg>
